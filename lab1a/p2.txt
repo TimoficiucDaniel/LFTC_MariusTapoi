@@ -1,0 +1,11 @@
+{
+	int a;
+	int b; 
+	int y;
+	int x;
+	read(a);
+	read(b);
+	read(y);
+	x=(y-b)/a;
+	write(x);
+}
