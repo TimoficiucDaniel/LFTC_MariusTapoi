@@ -1,0 +1,33 @@
+<program>::= <compound_statement> | <program><compound_statement>
+<letter>::=A|B|C|...|Z|a|b|c|...|z
+<digit>::=0|1|...|9
+<identifier>::=<firstletter><valid_sequence>
+<firstletter>::=<letter>|_
+<valid_sequence>::=<valid_symbol><valid_sequence>
+<valid_symbol>::=<letter>|<digit>|_
+<constant>::= <string> | <char> | <integer>
+<declist>::= <declaration> | <declaration> "," <declist>
+<declaration>::= <type> <identifier> | <declaration_and_assign_statement>
+<declaration_and_assign_statement> = <type> <identifier> "=" <consant>
+<type1>::= "int" | "char" | "string"
+<assign_satement>::= <identifier> "=" <expression> | <array_element>=<expression>
+<array_declaration>::= <declaration> "=" "list()"
+<array_element>:== <identifier> "["<integer>"]"
+<type>::=<type1>|<array_declaration>
+<compound_statement>::= "{"<statement_list>"}"
+<statement_list>::=<statement> ";" | <statement> ";" <statement_list>
+<statement>::= <declaration> | <simple_statement> | <structured_statement>
+<simple_statement>::= <assign_statement> | <iostatement>
+<io_statement>::= "read" "(" <identifier> ")" | "write" "(" <identifier> ")"
+<priority2_operator>::= "+" | "-"
+<proirity1_operator>::= "/" | "*" | "%"
+<expression>::=<term>|<term><operator1><term>
+<term>::=<factor>|<factor><operator2><factor>
+<factor>::=<identifier>|<constant>|"("<expression>")"
+<structured_statement>::= <compound_statement> | <if_statement> | <while_stamtent>
+<simple_statement>::= <assign_statement>| <io_statement>
+<while_statement>::= "while" "(" <condition> ")" "{" <statement> "}"
+<if_statement>::= "if" "("<condition>")" "{" <statement> "}" | "if" "("<condition>")" "{" <statement> "}" "else" "{" <statement> "}" | "if" "("<condition>")" "{" <statement> "}" "else" <if_statement> 
+<condition>::= <expression> | <expression><relation><condition>
+<relation>::= "<" | "<=" | "==" | ">=" | ">" | "!=" | "and" | "or"
+<comment>::= "#"<string>"#"
