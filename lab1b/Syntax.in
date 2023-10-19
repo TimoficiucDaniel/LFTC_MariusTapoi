@@ -31,3 +31,5 @@
 <condition>::= <expression> | <expression><relation><condition>
 <relation>::= "<" | "<=" | "==" | ">=" | ">" | "!=" | "and" | "or"
 <comment>::= "#"<string>"#"
+
+#very good and explicit, however some things seem a bit redundant. Also, I see that you use { } a lot as separators, maybe create a block statement to make work a bit easier
